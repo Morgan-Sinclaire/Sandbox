@@ -34,13 +34,14 @@ def least_power(m):
 
 
 def f_pos(m, n):
-    """Re-implementation of the operator m & n for integers m,n."""
+    """Re-implementation of the operator m & n for integers m,n > 0."""
     p = least_power(m)
     if m == p:
         return m*(n // m % 2)
     return f_pos(p, n) + f_pos(m - p, n)
 
 def f(m, n):
+    """Re-implementation of the operator m & n for any integers m,n."""
     if m == 0 or n == 0:
         return 0
     if m < n:
@@ -57,13 +58,14 @@ def f(m, n):
 #             print(i,j)
 
 def g_pos(m, n):
-    """Re-implementation of the operator m | n for integers m,n."""
+    """Re-implementation of the operator m | n for integers m,n > 0."""
     p = least_power(m)
     if m == p:
         return m + n - m*(n//m % 2)
     return p * (1 - ((n // p) % 2)) + g(m - p, n)
 
 def g(m, n):
+    """Re-implementation of the operator m | n for any integers m,n."""
     if m == 0:
         return n
     if m < n:
