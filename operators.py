@@ -87,3 +87,20 @@ def h(m, n):
 #     for j in range(-1000,1000):
 #         if (i ^ j) != h(i, j):
 #             print(i,j)
+
+"""
+Update: It was pointed out to me that and and or didn't actually do what I
+thought they did.
+"""
+
+def a(m, n):
+    """Re-implementation of the operator m and n for integers m,n."""
+    if m == 0:
+        return 0
+    return n
+
+def o(m, n):
+    """Re-implementation of the operator m or n for integers m,n."""
+    if m == 0:
+        return n
+    return m
